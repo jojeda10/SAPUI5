@@ -73,11 +73,12 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
 		var sServiceUrl = mConfig.serviceConfig.serviceUrl;
 
    // code is only needed for testing the application when there is no local proxy available
-		var bIsMocked = jQuery.sap.getUriParameters().get("responderOn") ==="true"; //"true";
+		// var bIsMocked = jQuery.sap.getUriParameters().get("responderOn") ==="true"; //"true";
+		// alert(bIsMocked);
 	//tart the mock server for the domain model
-		if (bIsMocked) {
+		// if (bIsMocked) {
 			this._startMockServer(sServiceUrl);
-		}
+		// }
 
 		// Create and set domain model to the component
 		var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, {
@@ -105,6 +106,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
 	},
 
 	_startMockServer: function(sServiceUrl) {
+		alert("works");
 		jQuery.sap.require("sap.ui.core.util.MockServer");
 		var oMockServer = new sap.ui.core.util.MockServer({
 			rootUri: sServiceUrl
