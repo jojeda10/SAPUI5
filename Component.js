@@ -56,6 +56,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
 	},
 
 	init: function() {
+		alert("jaimin");
 		sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
 
 		var mConfig = this.getMetadata().getConfig();
@@ -77,7 +78,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
 		// alert(bIsMocked);
 	//tart the mock server for the domain model
 		// if (bIsMocked) {
-		alert("jaimin");
+		
 			this._startMockServer(sServiceUrl);
 		// }
 
