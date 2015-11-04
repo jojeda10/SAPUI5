@@ -79,7 +79,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
 	//tart the mock server for the domain model
 		// if (bIsMocked) {
 		
-			this._startMockServer(sServiceUrl);
+	//		this._startMockServer(sServiceUrl);
 		// }
 
 		// Create and set domain model to the component
