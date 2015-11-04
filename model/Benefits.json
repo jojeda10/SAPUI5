@@ -1,0 +1,35 @@
+[{
+	"StatusDes": "Open",
+	"Status": "01",
+	"BenDes": "Career Savings (FLECS)",
+	"FcatId": "0001",
+	"UISettings": {
+		"TAB_ENRO": true,
+		"TAB_DETA": true,
+		"TAB_PHOT": true,
+		"ADD_BUTTN": true,
+		"FID_PLAN": "FI01",
+		"REM_BUTTN": true
+	},
+	"Fcat": {
+		"BEGDA": "01.11.2015",
+		"ENDDA": "31.12.2015",
+		"UNIT_SEL": "3000",
+		"UNIT_MIN": "3000",
+		"UNIT_MAX": "6000",
+		"UNIT_BUD": "6000",
+		"UNIT_CAL": "3450",		
+		"DAYS_SEL": "3000",				
+		"DAYS_REM": "",	
+		"DAYS_CAL": "",	
+		"VALU_CAL": "3450",	
+		"VALU_COS": "3450",		
+		"OPTS_CAL": "3450"
+	},	
+	"Pernr": "39910",
+	"CatId": "CT01",
+	"BenType": "CAT1",
+	"BenTypeDes": "Holiday",
+	"BenId": "B001",
+	"Icon": "sap-icon://loan"
+}]
