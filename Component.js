@@ -56,7 +56,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
 	},
 
 	init: function() {
-		alert("jaimin");
+		alert("jaimin2");
 		sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
 
 		var mConfig = this.getMetadata().getConfig();
