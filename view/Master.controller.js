@@ -143,7 +143,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Master", {
 	onSelect: function(oEvent) {
 		// Get the list item either from the listItem parameter or from the event's
 		// source itself (will depend on the device-dependent mode)
-
+        alert("Jaime new");
 		this.showDetail(oEvent.getParameter("listItem") || oEvent.getSource());
 	},
 
