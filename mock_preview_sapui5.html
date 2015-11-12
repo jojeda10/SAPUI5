@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <html>
-
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta charset="UTF-8">
@@ -22,7 +21,7 @@ bRunWithMock = false;
 }
 if (bRunWithMock) {
 jQuery.sap.require('sap.ui.core.util.MockServer');
-var uri = '/';
+var uri = '/sap/opu/odata/sap/ZHR_BENEFITS_SRV/';
 var oMock = new sap.ui.core.util.MockServer({rootUri : uri});
 oMock.simulate('model/metadata.xml', { sMockdataBaseUrl : 'model/', bGenerateMissingMockData : true });
 oMock.start();

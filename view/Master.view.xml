@@ -2,12 +2,12 @@
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page id="masterPage" title="{i18n>masterTitle}">
 		<subHeader id="masterSubHeader">
-			<Bar id="searchBar">
-				<contentMiddle>
-					<SearchField id="searchField" placeholder="{i18n>masterSearchPlaceholder}" search="onSearch" showRefreshButton="{device>/isNoTouch}"
-						tooltip="{i18n>masterSearchTooltip}" width="100%"></SearchField>
-				</contentMiddle>
-			</Bar>
+<!-- 			<Bar id="searchBar"> -->
+<!-- 				<contentMiddle> -->
+<!-- 					<SearchField id="searchField" placeholder="{i18n>masterSearchPlaceholder}" search="onSearch" showRefreshButton="{device>/isNoTouch}" -->
+<!-- 						tooltip="{i18n>masterSearchTooltip}" width="100%"></SearchField> -->
+<!-- 				</contentMiddle> -->
+<!-- 			</Bar> -->
 		</subHeader>
 		<content>
 			<List growing="true" growingScrollToLoad="true" id="list" items="{/Benefits}" mode="{device>/listMode}" noDataText="{i18n>masterListNoDataText}"

@@ -21,7 +21,7 @@
     }
   ],
   "mockpreview": {
-    "mockUri": "",
+    "mockUri": "/sap/opu/odata/sap/ZHR_BENEFITS_SRV/",
     "metadataFilePath": "model/metadata.xml",
     "loadJSONFiles": true,
     "loadCustomRequests": false,
@@ -37,6 +37,6 @@
   "hcpdeploy": {
     "account": "s0005549254trial",
     "name": "catalog",
-    "lastVersionWeTriedToDeploy": "1.0.2"
+    "lastVersionWeTriedToDeploy": "1.0.7"
   }
 }
