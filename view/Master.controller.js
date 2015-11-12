@@ -24,6 +24,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Master", {
 	},
 
 	onRouteMatched: function(oEvent) {
+
 		var sName = oEvent.getParameter("name");
 
 		if (sName !== "main") {
@@ -31,19 +32,21 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Master", {
 		}
 
 		//Load the detail view in desktop
-		this.loadDetailView();
+		this.selectFirstItem();
+		this.loadEmptyView();
 
 		//Wait for the list to be loaded once
 		this.waitForInitialListLoading(function() {
 
 			//On the empty hash select the first item
-			this.selectFirstItem();
+			//this.selectFirstItem();
 
 		});
 
 	},
 
 	onDetailChanged: function(sChanel, sEvent, oData) {
+		
 		var sEntityPath = oData.sEntityPath;
 		//Wait for the list to be loaded once
 		this.waitForInitialListLoading(function() {
@@ -70,6 +73,14 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Master", {
 		this.sTab = oData.sTabKey;
 	},
 
+	loadEmptyView: function() {
+		this.getRouter().myNavToWithoutHash({
+			currentView: this.getView(),
+			targetViewName: "catalog.view.Empty",
+			targetViewType: "XML"
+		});
+	},
+	
 	loadDetailView: function() {
 		this.getRouter().myNavToWithoutHash({
 			currentView: this.getView(),
@@ -89,6 +100,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Master", {
 	selectFirstItem: function() {
 		var oList = this.getView().byId("list");
 		var aItems = oList.getItems();
+
 		if (aItems.length) {
 			oList.setSelectedItem(aItems[0], true);
 			//Load the detail view in desktop
@@ -105,32 +117,33 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Master", {
 		}
 	},
 
-	onSearch: function() {
-		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
-		// Add search filter
-		var filters = [];
-		var searchString = this.getView().byId("searchField").getValue();
-		if (searchString && searchString.length > 0) {
-			filters = [new sap.ui.model.Filter("", sap.ui.model.FilterOperator.Contains, searchString)];
-		}
-		// Update list binding
-		this.getView().byId("list").getBinding("items").filter(filters);
-
-		//On phone devices, there is nothing to select from the list
-		if (sap.ui.Device.system.phone) {
-			return;
-		}
-
-		//Wait for the list to be reloaded
-		this.waitForInitialListLoading(function() {
-			//On the empty hash select the first item
-			this.selectFirstItem();
-		});
-	},
+//	onSearch: function() {
+//		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
+//		// Add search filter
+//		var filters = [];
+//		var searchString = this.getView().byId("searchField").getValue();
+//		if (searchString && searchString.length > 0) {
+//			filters = [new sap.ui.model.Filter("", sap.ui.model.FilterOperator.Contains, searchString)];
+//		}
+//		// Update list binding
+//		this.getView().byId("list").getBinding("items").filter(filters);
+//
+//		//On phone devices, there is nothing to select from the list
+//		if (sap.ui.Device.system.phone) {
+//			return;
+//		}
+//
+//		//Wait for the list to be reloaded
+//		this.waitForInitialListLoading(function() {
+//			//On the empty hash select the first item
+//			this.selectFirstItem();
+//		});
+//	},
 
 	onSelect: function(oEvent) {
 		// Get the list item either from the listItem parameter or from the event's
 		// source itself (will depend on the device-dependent mode)
+
 		this.showDetail(oEvent.getParameter("listItem") || oEvent.getSource());
 	},
 

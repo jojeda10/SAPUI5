@@ -2,132 +2,138 @@ jQuery.sap.declare("catalog.Component");
 jQuery.sap.require("catalog.MyRouter");
 
 sap.ui.core.UIComponent.extend("catalog.Component", {
-	metadata: {
-		name: "catalog",
-		version: "1.0",
-		includes: [],
-		dependencies: {
-			libs: ["sap.m", "sap.ui.layout"],
-			components: []
-		},
+  metadata: {
+    name: "catalog",
+    version: "1.0",
+    includes: [],
+    dependencies: {
+      libs: ["sap.m", "sap.ui.layout"],
+      components: []
+    },
 
-		rootView: "catalog.view.App",
+    rootView: "catalog.view.App",
 
-		config: {
-			resourceBundle: "i18n/messageBundle.properties",
-			serviceConfig: {
-				name: "ZHR_BENEFITS_SRV",
-				serviceUrl: ""
-			}
-		},
+    "config": {
+      resourceBundle: "i18n/messageBundle.properties",
+      serviceConfig: {
+        name: "NorthwindModel",
+        serviceUrl: "/sap/opu/odata/sap/ZHR_BENEFITS_SRV/"
+      }
+    },
 
-		routing: {
-			config: {
-				routerClass: catalog.MyRouter,
-				viewType: "XML",
-				viewPath: "catalog.view",
-				targetAggregation: "detailPages",
-				clearTarget: false
-			},
-			routes: [{
-				pattern: "",
-				name: "main",
-				view: "Master",
-				targetAggregation: "masterPages",
-				targetControl: "idAppControl",
-				subroutes: [{
-					pattern: "{entity}/:tab:",
-					name: "detail",
-					view: "Detail"
-				}]
-			}, {
-				name: "catchallMaster",
-				view: "Master",
-				targetAggregation: "masterPages",
-				targetControl: "idAppControl",
-				subroutes: [{
-					pattern: ":all*:",
-					name: "catchallDetail",
-					view: "NotFound",
-					transition: "show"
-				}]
-			}]
-		}
-	},
+    routing: {
+      config: {
+        routerClass: catalog.MyRouter,
+        viewType: "XML",
+        viewPath: "catalog.view",
+        targetAggregation: "detailPages",
+        clearTarget: false
+      },
+      routes: [{
+        pattern: "",
+        name: "main",
+        view: "Master",
+        targetAggregation: "masterPages",
+        targetControl: "idAppControl",
+        subroutes: [{
+          pattern: "{entity}/:tab:",
+          name: "detail",
+          view: "Detail"
+        },
+        {
+            pattern: "{entity}/:tab:",
+            name: "empty",
+            view: "Empty"
+          }
+        ]
+      }, {
+        name: "catchallMaster",
+        view: "Master",
+        targetAggregation: "masterPages",
+        targetControl: "idAppControl",
+        subroutes: [{
+          pattern: ":all*:",
+          name: "catchallDetail",
+          view: "NotFound",
+          transition: "show"
+        }]
+      }]
+    }
+  },
 
-	init: function() {
-		alert("jaimin2");
-		sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
+  init: function() {
 
-		var mConfig = this.getMetadata().getConfig();
+    sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
 
-		// Always use absolute paths relative to our own component
-		// (relative paths will fail if running in the Fiori Launchpad)
-		var oRootPath = jQuery.sap.getModulePath("catalog");
+    var mConfig = this.getMetadata().getConfig();
 
-		// Set i18n model
-		var i18nModel = new sap.ui.model.resource.ResourceModel({
-			bundleUrl: [oRootPath, mConfig.resourceBundle].join("/")
-		});
-		this.setModel(i18nModel, "i18n");
+    // Always use absolute paths relative to our own component
+    // (relative paths will fail if running in the Fiori Launchpad)
+    var oRootPath = jQuery.sap.getModulePath("catalog");
 
-		var sServiceUrl = mConfig.serviceConfig.serviceUrl;
+    // Set i18n model
+    var i18nModel = new sap.ui.model.resource.ResourceModel({
+      bundleUrl: [oRootPath, mConfig.resourceBundle].join("/")
+    });
+    this.setModel(i18nModel, "i18n");
+
+    var sServiceUrl = mConfig.serviceConfig.serviceUrl;
 
    // code is only needed for testing the application when there is no local proxy available
-		// var bIsMocked = jQuery.sap.getUriParameters().get("responderOn") ==="true"; //"true";
-		// alert(bIsMocked);
-	//tart the mock server for the domain model
-		// if (bIsMocked) {
-		
-	//		this._startMockServer(sServiceUrl);
-		// }
+    // var bIsMocked = jQuery.sap.getUriParameters().get("responderOn") ==="true"; //"true";
 
-		// Create and set domain model to the component
-		var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, {
-			json: true,
-			loadMetadataAsync: true
-		});
-		oModel.attachMetadataFailed(function() {
-			this.getEventBus().publish("Component", "MetadataFailed");
-		}, this);
-		this.setModel(oModel);
+  //tart the mock server for the domain model
+    // if (bIsMocked) {
 
-		// Set device model
-		var oDeviceModel = new sap.ui.model.json.JSONModel({
-			isTouch: sap.ui.Device.support.touch,
-			isNoTouch: !sap.ui.Device.support.touch,
-			isPhone: sap.ui.Device.system.phone,
-			isNoPhone: !sap.ui.Device.system.phone,
-			listMode: sap.ui.Device.system.phone ? "None" : "SingleSelectMaster",
-			listItemType: sap.ui.Device.system.phone ? "Active" : "Inactive"
-		});
-		oDeviceModel.setDefaultBindingMode("OneWay");
-		this.setModel(oDeviceModel, "device");
+  //    this._startMockServer(sServiceUrl);
+    // }
 
-		this.getRouter().initialize();
-	},
+    // Create and set domain model to the component
+    var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, {
+      json: true,
+      loadMetadataAsync: true
+    });
+    oModel.attachMetadataFailed(function() {
+      this.getEventBus().publish("Component", "MetadataFailed");
+    }, this);
+    this.setModel(oModel);
 
-	_startMockServer: function(sServiceUrl) {
-		alert("works");
-		jQuery.sap.require("sap.ui.core.util.MockServer");
-		var oMockServer = new sap.ui.core.util.MockServer({
-			rootUri: sServiceUrl
-		});
+    // Set device model
+    var oDeviceModel = new sap.ui.model.json.JSONModel({
+      isTouch: sap.ui.Device.support.touch,
+      isNoTouch: !sap.ui.Device.support.touch,
+      isPhone: sap.ui.Device.system.phone,
+      isNoPhone: !sap.ui.Device.system.phone,
+      listMode: sap.ui.Device.system.phone ? "None" : "SingleSelectMaster",
+      listItemType: sap.ui.Device.system.phone ? "Active" : "Inactive"
+    });
+    oDeviceModel.setDefaultBindingMode("OneWay");
+    this.setModel(oDeviceModel, "device");
 
-		var iDelay = +(jQuery.sap.getUriParameters().get("responderDelay") || 0);
-		sap.ui.core.util.MockServer.config({
-			autoRespondAfter: iDelay
-		});
+    this.getRouter().initialize();
+  },
 
-		oMockServer.simulate("model/metadata.xml", "model/");
-		oMockServer.start();
+  _startMockServer: function(sServiceUrl) {
 
-		sap.m.MessageToast.show("Running in demo mode with mock data.", {
-			duration: 4000
-		});
-	},
+    jQuery.sap.require("sap.ui.core.util.MockServer");
+    var oMockServer = new sap.ui.core.util.MockServer({
+      rootUri: sServiceUrl
+    });
 
-	getEventBus: function() {
-		return sap.ui.getCore().getEventBus();
-	}
+    var iDelay = +(jQuery.sap.getUriParameters().get("responderDelay") || 0);
+    sap.ui.core.util.MockServer.config({
+      autoRespondAfter: iDelay
+    });
+
+    oMockServer.simulate("model/metadata.xml", "model/");
+    oMockServer.start();
+
+    sap.m.MessageToast.show("Running in demo mode with mock data.", {
+      duration: 4000
+    });
+  },
+
+  getEventBus: function() {
+    return sap.ui.getCore().getEventBus();
+  }
 });
