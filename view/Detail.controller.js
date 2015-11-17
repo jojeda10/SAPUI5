@@ -7,7 +7,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 			//Do not wait for the master when in mobile phone resolution
 			this.oInitialLoadFinishedDeferred.resolve();
 		} else {
-			this.getView().setBusy(true);
+		//	this.getView().setBusy(true);
 			var oEventBus = this.getEventBus();
 			oEventBus.subscribe("Component", "MetadataFailed", this.onMetadataFailed, this);
 			oEventBus.subscribe("Master", "InitialLoadFinished", this.onMasterLoaded, this);
