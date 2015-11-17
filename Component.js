@@ -62,7 +62,11 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
   },
 
   init: function() {
+<<<<<<< Upstream, based on 316a522e625253fa4dbfbef6f81e763767970b4f
 
+=======
+ alert("jaime7");
+>>>>>>> a3be26d ok
     sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
 
     var mConfig = this.getMetadata().getConfig();
