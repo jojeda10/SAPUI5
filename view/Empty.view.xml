@@ -1,6 +1,6 @@
 <mvc:View controllerName="catalog.view.Empty" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
-	<Page id="EmptyPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}" title="{BenDes}">
+	<Page id="EmptyPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}" title="{BenDes}" class="sapUiSizeCompact">
 		<content>
 
 		</content>

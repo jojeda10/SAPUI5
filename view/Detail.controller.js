@@ -14,6 +14,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 		}
 
 		this.getRouter().attachRouteMatched(this.onRouteMatched, this);
+		this.setSliderStep();
 	},
 
 	onMasterLoaded: function(sChannel, sEvent) {
@@ -30,37 +31,53 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 	onRouteMatched: function(oEvent) {
 		var oParameters = oEvent.getParameters();
 
-		jQuery.when(this.oInitialLoadFinishedDeferred).then(jQuery.proxy(function() {
+		// jQuery.when(this.oInitialLoadFinishedDeferred).then(jQuery.proxy(function() {
+			
 			var oView = this.getView();
 
 			// When navigating in the Detail page, update the binding context 
-			if (oParameters.name !== "detail") {
-				return;
-			}
+			// if (oParameters.name !== "detail") {
+			// 	return;
+			// }
 
 			var sEntityPath = "/" + oParameters.arguments.entity;
 			this.bindView(sEntityPath);
 
-			var oIconTabBar = oView.byId("idIconTabBar");
-			oIconTabBar.getItems().forEach(function(oItem) {
-				if (oItem.getKey() !== "selfInfo") {
-					oItem.bindElement(oItem.getKey());
-				}
-			});
+			// var oIconTabBar = oView.byId("idIconTabBar");
+			// oIconTabBar.getItems().forEach(function(oItem) {
+			// 	if (oItem.getKey() !== "selfInfo") {
+			// 		oItem.bindElement(oItem.getKey());
+			// 	}
+			//  });
 
-			// Specify the tab being focused
-			var sTabKey = oParameters.arguments.tab;
-			this.getEventBus().publish("Detail", "TabChanged", {
-				sTabKey: sTabKey
-			});
+			// // Specify the tab being focused
+			// var sTabKey = oParameters.arguments.tab;
+			// this.getEventBus().publish("Detail", "TabChanged", {
+			// 	sTabKey: sTabKey
+			// });
 
-			if (oIconTabBar.getSelectedKey() !== sTabKey) {
-				oIconTabBar.setSelectedKey(sTabKey);
-			}
-		}, this));
+			// if (oIconTabBar.getSelectedKey() !== sTabKey) {
+			// 	oIconTabBar.setSelectedKey(sTabKey);
+			// }
+		// }, this));
 
 	},
 
+    handleTabSelect : function (oEvent) {
+     var oTab = oEvent.getParameter("key");
+     if ( oTab == "tab2" ) {
+       this.getView().byId("addButton").setVisible(true);
+     } else {
+     	this.getView().byId("addButton").setVisible(false);
+     }
+  },
+  
+  	setSliderStep: function() {
+  		//Calculate step value -> max - min
+  		var oStepValue = 25;
+    	this.getView().byId("idSlider").setStep(parseFloat(oStepValue));
+	},
+  
 	bindView: function(sEntityPath) {
 		var oView = this.getView();
 		oView.bindElement(sEntityPath);
@@ -113,6 +130,15 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 			entity: oEvent.getSource().getBindingContext().getPath().slice(1),
 			tab: oEvent.getParameter("selectedKey")
 		}, true);
+	},
+
+onInputChange: function(oEvent) {
+     this.getView().byId("idSlider").setValue(parseFloat(oEvent.getParameters().value));
+	},
+
+onSliderChange: function(oEvent) {
+
+      this.getView().byId("idInput").setValue(oEvent.getParameters().value);
 	},
 
 	openActionSheet: function() {

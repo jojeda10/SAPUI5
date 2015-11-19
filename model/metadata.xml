@@ -10,6 +10,7 @@
                 <Key>
                     <PropertyRef Name="Pernr"/>
                     <PropertyRef Name="CatId"/>
+                    <PropertyRef Name="BenId"/>
                 </Key>
                 <Property Name="Messg" Nullable="false" Type="ZHR_BENEFITS_SRV.Message"/>
                 <Property Name="UISettings" Nullable="false" Type="ZHR_BENEFITS_SRV.UISettings"/>
@@ -25,6 +26,7 @@
                 <Property MaxLength="2" Name="Status" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Status"/>
                 <Property MaxLength="2" Name="StatusDes" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Status description"/>
                 <Property MaxLength="4" Name="FcatId" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Field Catalog"/>
+                <Property MaxLength="255" Name="Info" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Information"/>   
             </EntityType>
             <ComplexType Name="FieldCatalog">
                 <Property Name="BEGDA" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false"
