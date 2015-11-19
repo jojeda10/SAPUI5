@@ -1,0 +1,60 @@
+.addToMyBen {
+	background-color: #E9721C;
+	padding-top: 1px;
+}
+
+.objectListItem {
+	height: 60%;
+}
+
+.valueBlock {
+	text-align: right;
+}
+.valueBlockInput {
+	line-height: 1px;
+    border-spacing: 1px
+}
+.valueInput {
+	height: 80%;
+	color: #f66900;
+	font-size:48px
+}
+
+.valueOutput {
+	height: 80%;
+	color: #0E5E9E;
+	padding-top: 0.7rem;
+	font-size:36px
+}
+
+.valueUnit {
+	padding-top: 0.1cm;
+	color: #666666
+}
+
+.valueDesc {
+	padding-top: 0.5rem;
+	font-weight: bold;
+}
+
+.myMap {
+    min-height: 300px;
+    height: 100%;
+    width: 100%
+}
+.label2 {
+    margin-top: 2px;
+}
+.size1 {
+    margin-top: 2px;
+    font-size: 1.3rem;
+    margin-right: 25px;
+}
+.sentence {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.info {
+    margin-left: 2cm;
+    margin-right: 2px;
+}
