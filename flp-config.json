@@ -1,11 +1,11 @@
 {
     "application": {
         "id": "",
-        "title": "Jaimito",
-        "description": "Jaimito",
+        "title": "Pepito",
+        "description": "Pepito",
         "type": "SAP_UI5_Component",
         "componentUrl": "/",
-        "appUrl": "#Jaimito-Display",
+        "appUrl": "#Pepito-Display",
         "navigationComponentName": "catalog",
         "intentSemanticObject": "",
         "intentAction": "",
@@ -13,7 +13,9 @@
         "HCPParentApplicationName": ""
     },
     "assignment": {
-        "groups": [],
+        "groups": [
+            "00000000-0000-1111-0000-00000000"
+        ],
         "contentPackages": [
             "00000000-0000-2222-0000-00000000"
         ],
@@ -21,10 +23,10 @@
     },
     "tile": {
         "type": "StaticTile",
-        "title": "Jaimito",
-        "subtitle": "Jaimito",
-        "searchKeywords": "Jaimito,Jaimito",
-        "displayIconUrl": "sap-icon://action",
+        "title": "Pepito",
+        "subtitle": "Pepito",
+        "searchKeywords": "Pepito,Pepito",
+        "displayIconUrl": "sap-icon://approvals",
         "displayInfoText": "",
         "size": "1x1",
         "serviceURL": "",

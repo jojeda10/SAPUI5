@@ -1,6 +1,7 @@
 sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 
 	onInit: function() {
+		
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
 
 		if (sap.ui.Device.system.phone) {
@@ -15,11 +16,13 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 
 		this.getRouter().attachRouteMatched(this.onRouteMatched, this);
 		this.setSliderStep();
+	//	this.bindLandingPage();
 	},
 
 	onMasterLoaded: function(sChannel, sEvent) {
 		this.getView().setBusy(false);
 		this.oInitialLoadFinishedDeferred.resolve();
+
 	},
 
 	onMetadataFailed: function() {

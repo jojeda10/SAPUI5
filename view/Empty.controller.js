@@ -14,12 +14,26 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Empty", {
 		}
 
 		this.getRouter().attachRouteMatched(this.onRouteMatched, this);
+
 	},
 
 	onMasterLoaded: function(sChannel, sEvent) {
 		this.getView().setBusy(false);
 		this.oInitialLoadFinishedDeferred.resolve();
+			    //Test
+		//  var oView = this.getView();
+		//  var oModel = oView.getModel();
+		//  alert(oModel);
+		// alert(oModel.getData().Benefits[0].Pernr);
+	var oModel = this.getView().getModel();
+
+
+   // var value = oModel.getProperty("/LandingPage/0/Title");
+   //var value = oModel.getData().LandingPage[1].Title;
+    alert(oModel.getProperty("/Benefits/0/Pernr"));
+    
 	},
+
 
 	onMetadataFailed: function() {
 		this.getView().setBusy(false);
@@ -28,6 +42,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Empty", {
 	},
 
 	onRouteMatched: function(oEvent) {
+	
 		var oParameters = oEvent.getParameters();
 
 		jQuery.when(this.oInitialLoadFinishedDeferred).then(jQuery.proxy(function() {
@@ -58,7 +73,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Empty", {
 				oIconTabBar.setSelectedKey(sTabKey);
 			}
 		}, this));
-
+		
 	},
 
 	bindView: function(sEntityPath) {

@@ -21,6 +21,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Master", {
 
 		oEventBus.subscribe("Detail", "Changed", this.onDetailChanged, this);
 		oEventBus.subscribe("Detail", "NotFound", this.onNotFound, this);
+		// this.bindLandingPage();
 	},
 
 	onRouteMatched: function(oEvent) {
@@ -69,6 +70,12 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Master", {
 			}
 		});
 	},
+
+ //  bindLandingPage: function(oEvent) {
+ //  	alert("hey");
+	// 	sap.ui.getCore().byId("Empty--LandingTest").setText("jaimito");
+	// },
+
 
 	onDetailTabChanged: function(sChanel, sEvent, oData) {
 		this.sTab = oData.sTabKey;

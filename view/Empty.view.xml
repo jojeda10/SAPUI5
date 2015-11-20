@@ -2,12 +2,12 @@
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page id="EmptyPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}" title="{BenDes}" class="sapUiSizeCompact">
 		<content>
-
+			<Text id="" text="oy..." xmlns="sap.m"/>
 		</content>
 		<footer id="EmptyFooter">
 			<Toolbar id="EmptyToolbar">
 				<content>
-
+					
 				</content>
 			</Toolbar>
 		</footer>
