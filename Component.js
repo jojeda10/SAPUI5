@@ -85,7 +85,15 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
   //tart the mock server for the domain model
     // if (bIsMocked) {
 
-  //    this._startMockServer(sServiceUrl);
+   //  this._startMockServer(sServiceUrl);
+   //Jaime always run mock
+    jQuery.sap.require("sap.ui.core.util.MockServer");
+    var oMockServer = new sap.ui.core.util.MockServer({
+      rootUri: sServiceUrl
+    });
+    oMockServer.simulate("model/metadata.xml", "model/");
+    oMockServer.start();  
+   
     // }
 
     // Create and set domain model to the component
