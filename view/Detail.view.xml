@@ -62,7 +62,7 @@
 			<Toolbar id="detailToolbar">
 				<content>
 					<ToolbarSpacer id="toolbarSpacer"></ToolbarSpacer>
-					<Button class="addToMyBen" icon="sap-icon://add-favorite" id="addButton" press="openActionSheet" text="Add to My benefits" visible="false"></Button>
+					<Button class="addToMyBen" icon="sap-icon://add-favorite" id="addButton" press="onAddBenefit" text="Add to My benefits" visible="false"></Button>
 				</content>
 			</Toolbar>
 		</footer>

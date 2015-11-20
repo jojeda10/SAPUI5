@@ -7,7 +7,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 			//Do not wait for the master when in mobile phone resolution
 			this.oInitialLoadFinishedDeferred.resolve();
 		} else {
-		//	this.getView().setBusy(true);
+			//	this.getView().setBusy(true);
 			var oEventBus = this.getEventBus();
 			oEventBus.subscribe("Component", "MetadataFailed", this.onMetadataFailed, this);
 			oEventBus.subscribe("Master", "InitialLoadFinished", this.onMasterLoaded, this);
@@ -32,52 +32,52 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 		var oParameters = oEvent.getParameters();
 
 		// jQuery.when(this.oInitialLoadFinishedDeferred).then(jQuery.proxy(function() {
-			
-			var oView = this.getView();
 
-			// When navigating in the Detail page, update the binding context 
-			// if (oParameters.name !== "detail") {
-			// 	return;
-			// }
+		var oView = this.getView();
 
-			var sEntityPath = "/" + oParameters.arguments.entity;
-			this.bindView(sEntityPath);
+		// When navigating in the Detail page, update the binding context 
+		// if (oParameters.name !== "detail") {
+		// 	return;
+		// }
 
-			// var oIconTabBar = oView.byId("idIconTabBar");
-			// oIconTabBar.getItems().forEach(function(oItem) {
-			// 	if (oItem.getKey() !== "selfInfo") {
-			// 		oItem.bindElement(oItem.getKey());
-			// 	}
-			//  });
+		var sEntityPath = "/" + oParameters.arguments.entity;
+		this.bindView(sEntityPath);
 
-			// // Specify the tab being focused
-			// var sTabKey = oParameters.arguments.tab;
-			// this.getEventBus().publish("Detail", "TabChanged", {
-			// 	sTabKey: sTabKey
-			// });
+		// var oIconTabBar = oView.byId("idIconTabBar");
+		// oIconTabBar.getItems().forEach(function(oItem) {
+		// 	if (oItem.getKey() !== "selfInfo") {
+		// 		oItem.bindElement(oItem.getKey());
+		// 	}
+		//  });
 
-			// if (oIconTabBar.getSelectedKey() !== sTabKey) {
-			// 	oIconTabBar.setSelectedKey(sTabKey);
-			// }
+		// // Specify the tab being focused
+		// var sTabKey = oParameters.arguments.tab;
+		// this.getEventBus().publish("Detail", "TabChanged", {
+		// 	sTabKey: sTabKey
+		// });
+
+		// if (oIconTabBar.getSelectedKey() !== sTabKey) {
+		// 	oIconTabBar.setSelectedKey(sTabKey);
+		// }
 		// }, this));
 
 	},
 
-    handleTabSelect : function (oEvent) {
-     var oTab = oEvent.getParameter("key");
-     if ( oTab == "tab2" ) {
-       this.getView().byId("addButton").setVisible(true);
-     } else {
-     	this.getView().byId("addButton").setVisible(false);
-     }
-  },
-  
-  	setSliderStep: function() {
-  		//Calculate step value -> max - min
-  		var oStepValue = 25;
-    	this.getView().byId("idSlider").setStep(parseFloat(oStepValue));
+	handleTabSelect: function(oEvent) {
+		var oTab = oEvent.getParameter("key");
+		if (oTab == "tab2") {
+			this.getView().byId("addButton").setVisible(true);
+		} else {
+			this.getView().byId("addButton").setVisible(false);
+		}
 	},
-  
+
+	setSliderStep: function() {
+		//Calculate step value -> max - min
+		var oStepValue = 25;
+		this.getView().byId("idSlider").setStep(parseFloat(oStepValue));
+	},
+
 	bindView: function(sEntityPath) {
 		var oView = this.getView();
 		oView.bindElement(sEntityPath);
@@ -132,13 +132,26 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 		}, true);
 	},
 
-onInputChange: function(oEvent) {
-     this.getView().byId("idSlider").setValue(parseFloat(oEvent.getParameters().value));
+	onInputChange: function(oEvent) {
+		this.getView().byId("idSlider").setValue(parseFloat(oEvent.getParameters().value));
 	},
 
-onSliderChange: function(oEvent) {
+	onSliderChange: function(oEvent) {
 
-      this.getView().byId("idInput").setValue(oEvent.getParameters().value);
+		this.getView().byId("idInput").setValue(oEvent.getParameters().value);
+	},
+
+	onAddBenefit: function(oEvent) {
+
+		var oEntry = {};
+		oEntry.YourID = "0001";
+		oEntry.Name = "Peter";
+		
+		 var oView = this.getView();
+		 var oModel = oView.getModel();
+		
+		 oModel.update('/Benefits', oEntry, null);
+		 alert("pepe");
 	},
 
 	openActionSheet: function() {
