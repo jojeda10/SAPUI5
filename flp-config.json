@@ -1,11 +1,11 @@
 {
     "application": {
         "id": "",
-        "title": "catalog",
-        "description": "Benefit catalog",
+        "title": "Benefit catalog",
+        "description": "Dummy Jaime",
         "type": "SAP_UI5_Component",
         "componentUrl": "/",
-        "appUrl": "#catalog-Display",
+        "appUrl": "#Benefit_catalog-Display",
         "navigationComponentName": "catalog",
         "intentSemanticObject": "",
         "intentAction": "",
@@ -13,7 +13,9 @@
         "HCPParentApplicationName": ""
     },
     "assignment": {
-        "groups": [],
+        "groups": [
+            "00000000-0000-1111-0000-00000000"
+        ],
         "contentPackages": [
             "00000000-0000-2222-0000-00000000"
         ],
@@ -22,9 +24,9 @@
     "tile": {
         "type": "StaticTile",
         "title": "Benefit catalog",
-        "subtitle": "",
-        "searchKeywords": "Benefit catalog,",
-        "displayIconUrl": "sap-icon://course-book",
+        "subtitle": "Dummy Jaime",
+        "searchKeywords": "Benefit catalog,Dummy Jaime",
+        "displayIconUrl": "sap-icon://decline",
         "displayInfoText": "",
         "size": "1x1",
         "serviceURL": "",
