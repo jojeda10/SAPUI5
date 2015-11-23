@@ -22,7 +22,6 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 	onMasterLoaded: function(sChannel, sEvent) {
 		this.getView().setBusy(false);
 		this.oInitialLoadFinishedDeferred.resolve();
-
 	},
 
 	onMetadataFailed: function() {
@@ -45,6 +44,11 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 
 		var sEntityPath = "/" + oParameters.arguments.entity;
 		this.bindView(sEntityPath);
+		//alert(sEntityPath);
+	
+ //   alert(value);
+  // var value = oModel.getData().LandingPage[1].Title;
+    
 
 		// var oIconTabBar = oView.byId("idIconTabBar");
 		// oIconTabBar.getItems().forEach(function(oItem) {

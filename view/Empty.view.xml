@@ -2,7 +2,16 @@
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page id="EmptyPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}" title="{BenDes}" class="sapUiSizeCompact">
 		<content>
-			<Text id="" text="oy..." xmlns="sap.m"/>
+			<Text id="2" text="oy..." xmlns="sap.m"/>
+			<List growing="true" growingScrollToLoad="true" id="list2" items="{/LandingPage}" mode="{device>/listMode}" noDataText="{i18n>masterListNoDataText}"
+				select="onSelect">
+				<items id="masterLis2t">
+					<ObjectListItem counter="0" icon="{Icon}" id="mainListItem2" markFavorite="false" markFlagged="false" number="" numberUnit="" press="onSelect"
+						showMarkers="false" title="{Title}" type="{device>/listItemType}" class="objectListItem">
+						<core:ExtensionPoint name="extListItemInfo"/>
+					</ObjectListItem>
+				</items>
+			</List>
 		</content>
 		<footer id="EmptyFooter">
 			<Toolbar id="EmptyToolbar">

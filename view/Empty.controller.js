@@ -20,18 +20,6 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Empty", {
 	onMasterLoaded: function(sChannel, sEvent) {
 		this.getView().setBusy(false);
 		this.oInitialLoadFinishedDeferred.resolve();
-			    //Test
-		//  var oView = this.getView();
-		//  var oModel = oView.getModel();
-		//  alert(oModel);
-		// alert(oModel.getData().Benefits[0].Pernr);
-	var oModel = this.getView().getModel();
-
-
-   // var value = oModel.getProperty("/LandingPage/0/Title");
-   //var value = oModel.getData().LandingPage[1].Title;
-    alert(oModel.getProperty("/Benefits/0/Pernr"));
-    
 	},
 
 
@@ -42,37 +30,38 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Empty", {
 	},
 
 	onRouteMatched: function(oEvent) {
-	
+
 		var oParameters = oEvent.getParameters();
 
-		jQuery.when(this.oInitialLoadFinishedDeferred).then(jQuery.proxy(function() {
+		// jQuery.when(this.oInitialLoadFinishedDeferred).then(jQuery.proxy(function() {
 			var oView = this.getView();
 
 			// When navigating in the Empty page, update the binding context 
-			if (oParameters.name !== "Empty") {
-				return;
-			}
+			// if (oParameters.name !== "Empty") {
+			// 	return;
+			// }
 
 			var sEntityPath = "/" + oParameters.arguments.entity;
 			this.bindView(sEntityPath);
-
-			var oIconTabBar = oView.byId("idIconTabBar");
-			oIconTabBar.getItems().forEach(function(oItem) {
-				if (oItem.getKey() !== "selfInfo") {
-					oItem.bindElement(oItem.getKey());
-				}
-			});
+            alert(sEntityPath);
+			// var oIconTabBar = oView.byId("idIconTabBar");
+			// oIconTabBar.getItems().forEach(function(oItem) {
+			// 	if (oItem.getKey() !== "selfInfo") {
+			// 		oItem.bindElement(oItem.getKey());
+			// 	}
+			// }
+			// );
 
 			// Specify the tab being focused
-			var sTabKey = oParameters.arguments.tab;
-			this.getEventBus().publish("Empty", "TabChanged", {
-				sTabKey: sTabKey
-			});
+		// 	var sTabKey = oParameters.arguments.tab;
+		// 	this.getEventBus().publish("Empty", "TabChanged", {
+		// 		sTabKey: sTabKey
+		// 	});
 
-			if (oIconTabBar.getSelectedKey() !== sTabKey) {
-				oIconTabBar.setSelectedKey(sTabKey);
-			}
-		}, this));
+		// 	if (oIconTabBar.getSelectedKey() !== sTabKey) {
+		// 		oIconTabBar.setSelectedKey(sTabKey);
+		// 	}
+		// }, this));
 		
 	},
 

@@ -116,6 +116,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
   _startMockServer: function(sServiceUrl) {
 
     jQuery.sap.require("sap.ui.core.util.MockServer");
+    
     var oMockServer = new sap.ui.core.util.MockServer({
       rootUri: sServiceUrl
     });

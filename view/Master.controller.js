@@ -26,6 +26,17 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Master", {
 
 	onRouteMatched: function(oEvent) {
 
+       // alert(this.getView().getModel().getMetadata().oStaticInfo.baseType);
+	  //  var oModel = sap.ui.getCore().getModel("catalog");
+	//	alert(oModel);
+    // 	var oModel = this.getView().getModel();
+       // var oModel = sap.ui.getCore().getModel();
+     //	   var oContext = new sap.ui.model.Context(oModel,"/Benefits");
+     	 //  	alert(oContext);
+     	//   	alert(oModel.getProperty("/Pernr", oContext));
+      //  alert(oModel.getProperty("/Benefits/0/Pernr"));
+      
+  
 		var sName = oEvent.getParameter("name");
 
 		if (sName !== "main") {
