@@ -9,11 +9,7 @@
 		"BenTypeDes": "Holiday",
 		"BenId": "B001",
 		"Icon": "sap-icon://learning-assistant",
-		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturien+
-t montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor s+
-it amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sa+
-pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis+
- parturient montes",
+		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		"UISettings": {
 			"TAB_ENRO": true,
 			"TAB_DETA": true,
@@ -49,11 +45,7 @@ pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ae
 		"BenTypeDes": "Holiday",
 		"BenId": "B002",
 		"Icon": "sap-icon://time-entry-request",
-		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturien+
-t montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor s+
-it amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sa+
-pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis+
- parturient montes",
+		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod biben",
 		"UISettings": {
 			"TAB_ENRO": true,
 			"TAB_DETA": true,
@@ -88,11 +80,7 @@ pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ae
 		"BenTypeDes": "Holiday",
 		"BenId": "B003",
 		"Icon": "sap-icon://general-leave-request",
-		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturien+
-t montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor s+
-it amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sa+
-pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis+
- parturient montes",
+		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibend",
 		"UISettings": {
 			"TAB_ENRO": true,
 			"TAB_DETA": true,
@@ -127,11 +115,7 @@ pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ae
 		"BenTypeDes": "Holiday",
 		"BenId": "B004",
 		"Icon": "sap-icon://laptop",
-		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturien+
-t montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor s+
-it amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sa+
-pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis+
- parturient montes",
+		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aene",
 		"UISettings": {
 			"TAB_ENRO": true,
 			"TAB_DETA": true,
@@ -166,11 +150,7 @@ pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ae
 		"BenTypeDes": "Recurrent cash",
 		"BenId": "B005",
 		"Icon": "sap-icon://collections-insight",
-		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturien+
-t montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor s+
-it amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sa+
-pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis+
- parturient montes",
+		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ",
 		"UISettings": {
 			"TAB_ENRO": true,
 			"TAB_DETA": true,
@@ -205,11 +185,7 @@ pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ae
 		"BenTypeDes": "Occasional cash",
 		"BenId": "B006",
 		"Icon": "sap-icon://payment-approval",
-		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturien+
-t montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor s+
-it amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sa+
-pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis+
- parturient montes",
+		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida do",
 		"UISettings": {
 			"TAB_ENRO": true,
 			"TAB_DETA": true,
@@ -244,11 +220,7 @@ pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ae
 		"BenTypeDes": "Reservation for 2017",
 		"BenId": "B008",
 		"Icon": "sap-icon://suitcase",
-		"Info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturien+
-t montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor s+
-it amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sa+
-pien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis+
- parturient montes",
+		"Info": "Lorem ipsum dolor sit",
 		"UISettings": {
 			"TAB_ENRO": true,
 			"TAB_DETA": true,

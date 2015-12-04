@@ -1,112 +1,156 @@
-<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
 	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
 	<edmx:DataServices m:DataServiceVersion="2.0">
-		<Schema Namespace="ZHR_BENEFITS_SRV" sap:schema-version="1" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-			<EntityType Name="Benefits" sap:content-version="1">
-				<Key>
-					<PropertyRef Name="Pernr"/>
-					<PropertyRef Name="CatId"/>
-					<PropertyRef Name="BenId"/>
-				</Key>
-				<Property Name="Messg" Nullable="false" Type="ZHR_BENEFITS_SRV.Message"/>
-				<Property Name="UISettings" Nullable="false" Type="ZHR_BENEFITS_SRV.UISettings"/>
-				<Property Name="Fcat" Nullable="false" Type="ZHR_BENEFITS_SRV.FieldCatalog"/>
-				<Property MaxLength="8" Name="Pernr" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Personnel No."/>
-				<Property MaxLength="8" Name="CatId" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Catalog ID"/>
-				<Property MaxLength="2" Name="BenType" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Benefit Type"/>
-				<Property MaxLength="255" Name="BenTypeDes" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Benefit Type"/>
-				<Property MaxLength="4" Name="BenId" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Benefit ID"/>
-				<Property MaxLength="255" Name="BenDes" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Benefit description"/>
-				<Property MaxLength="40" Name="Icon" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Icon"
-					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="2" Name="Status" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Status"/>
-				<Property MaxLength="2" Name="StatusDes" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Status description"/>
-				<Property MaxLength="4" Name="FcatId" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Field Catalog"/>
-				<Property MaxLength="255" Name="Info" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Information"/>
-			</EntityType>
-			<EntityType Name="LandingPage" m:HasStream="true" sap:content-version="1">
-				<Key>
-					<PropertyRef Name="Title"/>
-				</Key>
-				<Property Name="Title" Nullable="false" Type="Edm.String" sap:filterable="false"/>
-				<Property Name="Picture" Nullable="false" Type="Edm.Binary" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property Name="Description" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property Name="Icon" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property Name="Message" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-			</EntityType>
-			<ComplexType Name="FieldCatalog">
-				<Property Name="BEGDA" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false"
-					sap:label="Time Stamp" sap:sortable="false" sap:updatable="false"/>
-				<Property Name="ENDDA" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false"
-					sap:label="Time Stamp" sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="4" Name="UNIT_SEL" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="4" Name="UNIT_MIN" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="4" Name="UNIT_MAX" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="4" Name="UNIT_BUD" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="4" Name="UNIT_CAL" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="2" Name="DAYS_SEL" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="2" Name="DAYS_REM" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="2" Name="DAYS_CAL" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="10" Name="VALU_CAL" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="VALU_COS" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="10" Name="OPTS_CAL" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
-					sap:sortable="false" sap:updatable="false"/>
-			</ComplexType>
-			<ComplexType Name="UISettings">
-				<Property Name="TAB_ENRO" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Indicator"
-					sap:sortable="false" sap:updatable="false"/>
-				<Property Name="TAB_DETA" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Indicator"
-					sap:sortable="false" sap:updatable="false"/>
-				<Property Name="TAB_PHOT" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Indicator"
-					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="4" Name="FID_PLAN" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property Name="ADD_BUTTN" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Indicator"
-					sap:sortable="false" sap:updatable="false"/>
-				<Property Name="REM_BUTTN" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Indicator"
-					sap:sortable="false" sap:updatable="false"/>
-				<Property MaxLength="2" Name="SEL_TYPE" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-			</ComplexType>
-			<ComplexType Name="Message">
-				<Property MaxLength="20" Name="MSGID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="1" Name="MSGTY" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="3" Name="MSGNO" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="50" Name="MSGV1" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="50" Name="MSGV2" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="50" Name="MSGV3" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-				<Property MaxLength="50" Name="MSGV4" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
-					sap:updatable="false"/>
-			</ComplexType>
-			<EntityContainer Name="ZHR_BENEFITS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
-				<EntitySet EntityType="ZHR_BENEFITS_SRV.Benefits" Name="Benefits" sap:addressable="false" sap:content-version="1" sap:pageable="false"
-					sap:searchable="true"/>
-			</EntityContainer>
-			<atom:link href="http://sdaw0796.resnp.sysnp.shared.fortis:8000/sap/opu/odata/sap/ZHR_BENEFITS_SRV/$metadata" rel="self"
-				xmlns:atom="http://www.w3.org/2005/Atom"/>
-			<atom:link href="http://sdaw0796.resnp.sysnp.shared.fortis:8000/sap/opu/odata/sap/ZHR_BENEFITS_SRV/$metadata" rel="latest-version"
-				xmlns:atom="http://www.w3.org/2005/Atom"/>
-		</Schema>
-	</edmx:DataServices>
-</edmx:Edmx>
+ <Schema Namespace="ZHR_BENEFITS_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+ <EntityType Name="LandingPage" sap:content-version="1">
+ <Key>
+  <PropertyRef Name="Title" /> 
+  </Key>
+  <Property Name="Title" Type="Edm.String" Nullable="false" sap:filterable="false" /> 
+  <Property Name="Picture" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Description" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Icon" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Message" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  </EntityType>
+ <EntityType Name="Benefits" sap:content-version="1">
+ <Key>
+  <PropertyRef Name="Pernr" /> 
+  <PropertyRef Name="Actionid" /> 
+  <PropertyRef Name="Barea" /> 
+  <PropertyRef Name="Bplan" /> 
+  </Key>
+  <Property Name="Fcat" Type="ZHR_BENEFITS_SRV.FieldCatalog" Nullable="false" /> 
+  <Property Name="UISettings" Type="ZHR_BENEFITS_SRV.UISettings" Nullable="false" /> 
+  <Property Name="Messg" Type="ZHR_BENEFITS_SRV.Messg" Nullable="false" /> 
+  <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Actionid" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Barea" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Benefit area" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Bplan" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Benefit plan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="FrontendItem" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Frontend Item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="ActionID status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  </EntityType>
+ <ComplexType Name="Message">
+  <Property Name="MSGID" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="MSGTY" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="MSGNO" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="MSGV1" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="MSGV2" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="MSGV3" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="MSGV4" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  </ComplexType>
+ <ComplexType Name="UISettings">
+  <Property Name="Selector" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab1" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab2" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab3" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab4" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab1Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab2Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab3Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab4Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+  <Property Name="Tab1Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab2Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab3Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab4Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab1Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab2Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab3Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab4Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab1Fcat" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab2Fcat" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab3Fcat" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Tab4Fcat" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut1" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut2" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut3" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut4" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut1Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut2Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut3Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut4Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut1Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut2Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut3Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut4Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut1Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut2Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut3Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Lowbut4Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut1" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean Variable (X=True, -=False, Space=Unknown)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut2" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean Variable (X=True, -=False, Space=Unknown)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut3" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean Variable (X=True, -=False, Space=Unknown)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut4" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Boolean Variable (X=True, -=False, Space=Unknown)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut1Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut2Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut3Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut4Icon" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut1Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut2Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut3Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut4Label" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut1Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut2Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut3Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Heabut4Hand" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  </ComplexType>
+ <ComplexType Name="FieldCatalog">
+  <Property Name="Begda" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Endda" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="BenDes" Type="Edm.String" Nullable="false" sap:label="Benefit description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="StatusDes" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Status description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Icon" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Icon" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="EffecOn" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="UnitSel" Type="Edm.Int32" Nullable="false" sap:label="Units selection" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="UnitMin" Type="Edm.Int32" Nullable="false" sap:label="Units minimum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="UnitMax" Type="Edm.Int32" Nullable="false" sap:label="Units maximum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="UnitBud" Type="Edm.Int32" Nullable="false" sap:label="Units budget" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="UnitCal" Type="Edm.Int32" Nullable="false" sap:label="Units calculated" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="DaysSel" Type="Edm.Decimal" Nullable="false" Precision="2" Scale="1" sap:label="Days selected" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="DaysRem" Type="Edm.Decimal" Nullable="false" Precision="2" Scale="1" sap:label="Days remaining" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="DaysCal" Type="Edm.Decimal" Nullable="false" Precision="2" Scale="1" sap:label="Days calculated" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="DaysMin" Type="Edm.Decimal" Nullable="false" Precision="2" Scale="1" sap:label="Days minimum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="DaysMax" Type="Edm.Decimal" Nullable="false" Precision="2" Scale="1" sap:label="Days maximum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="DaysRate" Type="Edm.Int32" Nullable="false" sap:label="Days rate" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="ValuCal" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Value calculated" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="OptsCos" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Value cost" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="OptsCal" Type="Edm.Int32" Nullable="false" sap:label="Options calculated" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Url" Type="Edm.String" Nullable="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  </ComplexType>
+ <ComplexType Name="Messg">
+  <Property Name="Msgid" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Message Class" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Msgty" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Message Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Msgno" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Message number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Msgv1" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Msgv2" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Msgv3" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  <Property Name="Msgv4" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Message Variable" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" /> 
+  </ComplexType>
+ <EntityContainer Name="ZHR_BENEFITS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+  <EntitySet Name="Benefits" EntityType="ZHR_BENEFITS_SRV.Benefits" sap:pageable="false" sap:addressable="false" sap:content-version="1" /> 
+  <EntitySet Name="LandingPage" EntityType="ZHR_BENEFITS_SRV.LandingPage" sap:pageable="false" sap:addressable="false" sap:content-version="1" /> 
+ <FunctionImport Name="addBenefit" ReturnType="ZHR_BENEFITS_SRV.Messg" m:HttpMethod="GET" sap:action-for="ZHR_BENEFITS_SRV.Benefits">
+  <Parameter Name="BenId" Type="Edm.String" Mode="In" /> 
+  <Parameter Name="Bplan" Type="Edm.String" Mode="In" /> 
+  <Parameter Name="Barea" Type="Edm.String" Mode="In" /> 
+  <Parameter Name="Pernr" Type="Edm.String" Mode="In" /> 
+  </FunctionImport>
+ <FunctionImport Name="removeBenefit" ReturnType="ZHR_BENEFITS_SRV.Messg" m:HttpMethod="GET" sap:action-for="ZHR_BENEFITS_SRV.Benefits">
+  <Parameter Name="Actionid" Type="Edm.String" Mode="In" /> 
+  <Parameter Name="Pernr" Type="Edm.String" Mode="In" /> 
+  <Parameter Name="Bplan" Type="Edm.String" Mode="In" /> 
+  <Parameter Name="BenId" Type="Edm.String" Mode="In" /> 
+  <Parameter Name="Barea" Type="Edm.String" Mode="In" /> 
+  </FunctionImport>
+ <FunctionImport Name="editBenefit" ReturnType="ZHR_BENEFITS_SRV.Messg" m:HttpMethod="GET" sap:action-for="ZHR_BENEFITS_SRV.Benefits">
+  <Parameter Name="Actionid" Type="Edm.String" Mode="In" /> 
+  <Parameter Name="Pernr" Type="Edm.String" Mode="In" /> 
+  <Parameter Name="Bplan" Type="Edm.String" Mode="In" /> 
+  <Parameter Name="BenId" Type="Edm.String" Mode="In" /> 
+  <Parameter Name="Barea" Type="Edm.String" Mode="In" /> 
+  </FunctionImport>
+  </EntityContainer>
+  <atom:link rel="self" href="http://sdaw0796.resnp.sysnp.shared.fortis:8000/sap/opu/odata/sap/ZHR_BENEFITS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom" /> 
+  <atom:link rel="latest-version" href="http://sdaw0796.resnp.sysnp.shared.fortis:8000/sap/opu/odata/sap/ZHR_BENEFITS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom" /> 
+  </Schema>
+  </edmx:DataServices>
+  </edmx:Edmx>
