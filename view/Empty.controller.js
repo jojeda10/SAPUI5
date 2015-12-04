@@ -43,7 +43,6 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Empty", {
 
 			var sEntityPath = "/" + oParameters.arguments.entity;
 			this.bindView(sEntityPath);
-            alert(sEntityPath);
 			// var oIconTabBar = oView.byId("idIconTabBar");
 			// oIconTabBar.getItems().forEach(function(oItem) {
 			// 	if (oItem.getKey() !== "selfInfo") {

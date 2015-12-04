@@ -1,11 +1,18 @@
 <mvc:View controllerName="catalog.view.Detail" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:form="sap.ui.layout.form"
 	xmlns:l="sap.ui.layout" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page class="sapUiSizeCompact" id="detailPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}">
+		<headerContent> 
+			<!--<Toolbar id="detailToolba2r">-->
+			<!--	<content>-->
+					<Button icon="sap-icon://action" id="addButton2" press="onAddBenefit" text="Go to My benefits" ></Button>
+			<!--	</content>-->
+			<!--</Toolbar>	-->
+	</headerContent>
 		<content>
-			<ObjectHeader icon="{Icon}" iconActive="false" id="detailHeader" introActive="false" number="{Fcat/UNIT_BUD}" numberUnit="Units in balance"
+			<ObjectHeader icon="{Icon}" iconActive="false" id="detailHeader" introActive="false" number="{Fcat/BUDGET}" numberUnit="Units in balance"
 				title="{BenDes}" titleActive="false">
 				<attributes id="detailAttributes">
-					<ObjectAttribute active="false" id="attribute" text="Open from 01.01.2016 until 18.12.2016"></ObjectAttribute>
+					<ObjectAttribute active="false" id="attribute" text="Open from {Fcat/BEGDA} until {Fcat/ENDDA}"></ObjectAttribute>
 				</attributes>
 				<firstStatus id="detailStatus">
 					<ObjectStatus id="status" text=""></ObjectStatus>
@@ -33,23 +40,27 @@
 					</IconTabFilter>
 					<IconTabFilter design="Horizontal" icon="sap-icon://approvals" id="iconTabFilter2" key="tab2" text="Enrollment" textDirection="LTR">
 						<content>
-							<l:Grid binding="{/PersonCollection}" class="sapUiSmallMarginTop" defaultSpan="L6 M6 S10" hSpacing="2">
+							<l:Grid idclass="sapUiSmallMarginTop" defaultSpan="L6 M6 S10" hSpacing="2">
 								<l:content>
 									<VBox width="100%">
-										<Input id="idInput" class="sapUiSmallMarginBottom" description="Units" fieldWidth="80%" value="0" width="100%" change="onInputChange"/>
-										<Slider id="idSlider" value="0" width="100%" change="onSliderChange"  min="0" max="100"/>
+										<Input change="onInputChange" class="sapUiSmallMarginBottom" description="Units" fieldWidth="80%" id="idInput" value="{Fcat/AMTEMPLOYEE}"
+											width="100%"/>
+										<Slider change="onSliderChange" id="idSlider" max="{Fcat/AMTMAX}" min="{Fcat/AMTMIN}" value="{Fcat/AMTEMPLOYEE}" width="100%"/>
 									</VBox>
-										<layout:VerticalLayout enabled="true" id="idverto1" visible="true" width="100%" xmlns="sap.ui.layout" class="valueBlock">
-											<content>
-									<VBox id="stuff" xmlns="sap.m" width="100%" class="sapMObjectNumber">
-											<Text id="text2" text="328" xmlns="sap.m" class="valueInput"/>
-											<Text id="text3" text="Options" xmlns="sap.m" class="valueUnit"/>
-									</VBox>	
-											<Text id="text4" text="10 Euro / Option" xmlns="sap.m" class="valueDesc"/>
-											<Text id="text5" text="3.280" xmlns="sap.m" class="valueOutput"/>
-											<Text id="text6" text="Euro" xmlns="sap.m" class="valueUnit"/>
-											</content>
-										</layout:VerticalLayout>
+									<layout:VerticalLayout class="valueBlock" enabled="true" id="idverto1" visible="true" width="100%" xmlns="sap.ui.layout">
+										<content>
+											<VBox class="sapMObjectNumber" id="stuff" width="100%" xmlns="sap.m">
+												<Text class="valueInput" id="options" text="328" xmlns="sap.m"/>
+												<Text class="valueUnit" id="text3" text="Options" xmlns="sap.m"/>
+											</VBox>
+											<Text class="valueDesc" id="text4" text="10 Euro / Option" xmlns="sap.m"/>
+											<Text class="valueOutput" id="valorization" text="{Fcat/VALORIZATION}" xmlns="sap.m"/>
+											<Text class="valueUnit" id="text6" text="Euro" xmlns="sap.m"/>
+											<Text id="amtinv" fieldGroupIds="[TestGroup]" text="{Fcat/AMTEMPLOYEE}" visible="false" xmlns="sap.m"/>
+											<Text id="valinv" fieldGroupIds="[TestGroup]" text="{Fcat/VALORIZATION}" visible="false" xmlns="sap.m"/>
+											<Text id="cosinv" fieldGroupIds="[TestGroup]" text="{Fcat/VALUCOS}" visible="false" xmlns="sap.m"/>
+										</content>
+									</layout:VerticalLayout>
 								</l:content>
 							</l:Grid>
 						</content>

@@ -1,7 +1,7 @@
 sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 
 	onInit: function() {
-		
+
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
 
 		if (sap.ui.Device.system.phone) {
@@ -16,12 +16,16 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 
 		this.getRouter().attachRouteMatched(this.onRouteMatched, this);
 		this.setSliderStep();
-	//	this.bindLandingPage();
+		// var aTest = sap.ui.getCore().getFieldGroupIds();
+  //      alert(aTest);
+		//	this.bindLandingPage();
 	},
 
 	onMasterLoaded: function(sChannel, sEvent) {
 		this.getView().setBusy(false);
 		this.oInitialLoadFinishedDeferred.resolve();
+		//if FLECS -> Calculate val
+
 	},
 
 	onMetadataFailed: function() {
@@ -31,6 +35,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 	},
 
 	onRouteMatched: function(oEvent) {
+
 		var oParameters = oEvent.getParameters();
 
 		// jQuery.when(this.oInitialLoadFinishedDeferred).then(jQuery.proxy(function() {
@@ -45,10 +50,10 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 		var sEntityPath = "/" + oParameters.arguments.entity;
 		this.bindView(sEntityPath);
 		//alert(sEntityPath);
-	
- //   alert(value);
-  // var value = oModel.getData().LandingPage[1].Title;
-    
+		//Perform initialization
+		this.performInitialization();
+		//   alert(value);
+		// var value = oModel.getData().LandingPage[1].Title;
 
 		// var oIconTabBar = oView.byId("idIconTabBar");
 		// oIconTabBar.getItems().forEach(function(oItem) {
@@ -70,10 +75,34 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 
 	},
 
+	performInitialization: function(oEvent) {
+		//Initialize tab
+		var oTabBar = this.getView().byId("idIconTabBar");
+		if (oTabBar.getSelectedKey() == "tab2" || oTabBar.getExpanded() == "false") {
+			oTabBar.setSelectedKey("tab1");
+			oTabBar.setExpanded(true);
+		}
+		//Initialize selectors
+		// this.clearText(this.getView().byId("amtinv"));
+		// this.clearText(this.getView().byId("valinv"));
+		// this.clearText(this.getView().byId("cosinv"));		
+		// this.clearValue(this.getView().byId("idInput"));
+		// this.clearValue(this.getView().byId("idSlider"));
+	},
+
+	clearText: function(oObject) {
+		oObject.setText("");
+	},
+	
+	clearValue: function(oObject) {
+		oObject.setValue("0");
+	},	
+	
 	handleTabSelect: function(oEvent) {
 		var oTab = oEvent.getParameter("key");
 		if (oTab == "tab2") {
 			this.getView().byId("addButton").setVisible(true);
+			this.calculateValueFLECS();
 		} else {
 			this.getView().byId("addButton").setVisible(false);
 		}
@@ -144,8 +173,19 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 	},
 
 	onSliderChange: function(oEvent) {
-
 		this.getView().byId("idInput").setValue(oEvent.getParameters().value);
+		this.getView().byId("amtinv").setText(oEvent.getParameters().value);
+		this.calculateValueFLECS();
+	},
+
+	calculateValueFLECS: function(oEvent) {
+		// alert(this.getView().byId("idInput").getValue());
+		// alert(this.getView().byId("amtinv").getText());
+		this.getView().byId("valorization").setText(catalog.util.Utilities.calculateValue(this.getView().byId("amtinv").getText(), this.getView()
+			.byId("valinv").getText(),
+			this.getView().byId("cosinv").getText()));
+		//	alert(this.getView().byId("valorization").getText());
+		this.getView().byId("options").setText(catalog.util.Utilities.calculateOptions(this.getView().byId("valorization").getText()));
 	},
 
 	onAddBenefit: function(oEvent) {
@@ -153,12 +193,12 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 		var oEntry = {};
 		oEntry.YourID = "0001";
 		oEntry.Name = "Peter";
-		
-		 var oView = this.getView();
-		 var oModel = oView.getModel();
-		
-		 oModel.update('/Benefits', oEntry, null);
-		 alert("pepe");
+
+		var oView = this.getView();
+		var oModel = oView.getModel();
+
+		oModel.update('/Benefits', oEntry, null);
+
 	},
 
 	openActionSheet: function() {

@@ -1,8 +1,5 @@
 {
   "dataBinding": {
-    "/view/Master.view.xml": {
-      "entitySet": ""
-    },
     "/view/Detail.view.xml": {
       "entitySet": ""
     },
@@ -37,6 +34,6 @@
   "hcpdeploy": {
     "account": "s0005549254trial",
     "name": "catalog",
-    "lastVersionWeTriedToDeploy": "1.0.13"
+    "lastVersionWeTriedToDeploy": "1.0.14"
   }
 }

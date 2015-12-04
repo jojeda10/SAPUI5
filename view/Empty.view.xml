@@ -1,23 +1,58 @@
 <mvc:View controllerName="catalog.view.Empty" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
-	<Page id="EmptyPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}" title="{BenDes}" class="sapUiSizeCompact">
+	<Page class="sapUiSizeCompact" id="EmptyPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}" title="{BenDes}">
 		<content>
-			<Text id="2" text="oy..." xmlns="sap.m"/>
-			<List growing="true" growingScrollToLoad="true" id="list2" items="{/LandingPage}" mode="{device>/listMode}" noDataText="{i18n>masterListNoDataText}"
-				select="onSelect">
+			<List growing="true" growingScrollToLoad="true" id="list2" items="{/LandingPage}" mode="{device>/listMode}"
+				noDataText="{i18n>masterListNoDataText}" select="onSelect" visible="false">
 				<items id="masterLis2t">
-					<ObjectListItem counter="0" icon="{Icon}" id="mainListItem2" markFavorite="false" markFlagged="false" number="" numberUnit="" press="onSelect"
-						showMarkers="false" title="{Title}" type="{device>/listItemType}" class="objectListItem">
+					<ObjectListItem class="objectListItem" counter="0" icon="{Icon}" id="mainListItem2" markFavorite="false" markFlagged="false" number=""
+						numberUnit="" press="onSelect" showMarkers="false" title="{Title}" type="{device>/listItemType}">
 						<core:ExtensionPoint name="extListItemInfo"/>
 					</ObjectListItem>
 				</items>
 			</List>
+			<Panel class="emptyBorders2" width="90%">
+				<content>
+					<l:Grid defaultSpan="L3 M4 S6" hSpacing="0" vSpacing="0">
+						<l:content>
+							<VBox>
+								<Text class="emptyTitle" text="Benefits"/>
+								<layoutData>
+									<l:GridData span="L12 M12 S12"/>
+								</layoutData>
+							</VBox>
+							<VBox class="emptyPic" height="260px">
+								<Image activeSrc="" alt="" decorative="true" densityAware="true" height="102%" id="idpicpart" press="" src="image/EmptyPic.PNG" tap=""
+									useMap="" visible="true" width="102%"/>
+								<layoutData>
+									<l:GridData span="L6 M6 S6"/>
+								</layoutData>
+							</VBox>
+							<VBox class="emptyDesc" height="260px">
+								<Text class="emptyBorders2"
+									text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"/>
+								<layoutData>
+									<l:GridData span="L6 M6 S6"/>
+								</layoutData>
+							</VBox>
+							<VBox class="emptyMess">
+								<HBox class="emptyBorders1">
+									<core:Icon color="#2B2B15" src="sap-icon://message-information" class="emptyIcon"></core:Icon>
+									<Text 
+										text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo , consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"/>
+								</HBox>
+								<layoutData>
+									<l:GridData span="L12 M12 S12"/>
+								</layoutData>
+							</VBox>
+						</l:content>
+					</l:Grid>
+				</content>
+			</Panel>
 		</content>
 		<footer id="EmptyFooter">
 			<Toolbar id="EmptyToolbar">
-				<content>
-					
-				</content>
+				<content></content>
 			</Toolbar>
 		</footer>
 	</Page>
