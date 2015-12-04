@@ -1,7 +1,7 @@
 [{
-	"Title": "Benefit",
-	"Picture": "pic",
-	"Description": "blabla",
-	"Icon": "23",
-	"Message": "hey!"
+	"Title": "Benefits",
+	"Picture": "12345",
+	"Description": "Lorem ipsum",
+	"Icon": "4321",
+	"Message": "Hello world!"
 }]
