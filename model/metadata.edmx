@@ -100,4 +100,13 @@
 					sap:updatable="false"/>
 			</ComplexType>
 			<EntityContainer Name="ZHR_BENEFITS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
-		
+				<EntitySet EntityType="ZHR_BENEFITS_SRV.Benefits" Name="Benefits" sap:addressable="false" sap:content-version="1" sap:pageable="false"
+					sap:searchable="true"/>
+			</EntityContainer>
+			<atom:link href="http://sdaw0796.resnp.sysnp.shared.fortis:8000/sap/opu/odata/sap/ZHR_BENEFITS_SRV/$metadata" rel="self"
+				xmlns:atom="http://www.w3.org/2005/Atom"/>
+			<atom:link href="http://sdaw0796.resnp.sysnp.shared.fortis:8000/sap/opu/odata/sap/ZHR_BENEFITS_SRV/$metadata" rel="latest-version"
+				xmlns:atom="http://www.w3.org/2005/Atom"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
