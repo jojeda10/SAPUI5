@@ -13,8 +13,8 @@
 			<List growing="true" growingScrollToLoad="true" id="list" items="{/Benefits}" mode="{device>/listMode}" noDataText="{i18n>masterListNoDataText}"
 				select="onSelect">
 				<items id="masterList">
-					<ObjectListItem counter="0" icon="{Icon}" id="mainListItem" markFavorite="false" markFlagged="false" number="" numberUnit="" press="onSelect"
-						showMarkers="false" title="{BenDes}" type="{device>/listItemType}" class="objectListItem">
+					<ObjectListItem counter="0" icon="{Fcat/Icon}" id="mainListItem" markFavorite="false" markFlagged="false" number="" numberUnit="" press="onSelect"
+						showMarkers="false" title="{Fcat/BenDes}" type="{device>/listItemType}" class="objectListItem">
 						<core:ExtensionPoint name="extListItemInfo"/>
 					</ObjectListItem>
 				</items>

@@ -17,7 +17,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 		this.getRouter().attachRouteMatched(this.onRouteMatched, this);
 		this.setSliderStep();
 		// var aTest = sap.ui.getCore().getFieldGroupIds();
-  //      alert(aTest);
+		//      alert(aTest);
 		//	this.bindLandingPage();
 	},
 
@@ -47,11 +47,15 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 		// 	return;
 		// }
 
+		//Store object context in a global variable     
+
 		var sEntityPath = "/" + oParameters.arguments.entity;
 		this.bindView(sEntityPath);
 		//alert(sEntityPath);
 		//Perform initialization
 		this.performInitialization();
+		this.oObject = this.getView().getBindingContext().getObject();
+
 		//   alert(value);
 		// var value = oModel.getData().LandingPage[1].Title;
 
@@ -82,6 +86,7 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 			oTabBar.setSelectedKey("tab1");
 			oTabBar.setExpanded(true);
 		}
+
 		//Initialize selectors
 		// this.clearText(this.getView().byId("amtinv"));
 		// this.clearText(this.getView().byId("valinv"));
@@ -90,22 +95,57 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Detail", {
 		// this.clearValue(this.getView().byId("idSlider"));
 	},
 
+	//Load tab
+	loadTab: function(oEvent) {
+
+	},
+
+	//Pick fragment from repository, load it and pass it back
+	loadFragment: function(oFragmentName, oFragmentID) {
+		return sap.ui.xmlfragment(oFragmentName, "fragments." + oFragmentID + "", this.getView().getController());
+	},
+
 	clearText: function(oObject) {
 		oObject.setText("");
 	},
-	
+
 	clearValue: function(oObject) {
 		oObject.setValue("0");
-	},	
-	
+	},
+
+	createFragmentName: function(oTab, oCatalogID) {
+		return oTab + oCatalogID;
+	},
 	handleTabSelect: function(oEvent) {
+
 		var oTab = oEvent.getParameter("key");
-		if (oTab == "tab2") {
-			this.getView().byId("addButton").setVisible(true);
-			this.calculateValueFLECS();
+
+		if (oTab == "tab1") {
+			if (this.oObject.UISettings.Tab1) {
+				// 
+				var oFragment = this.loadFragment(this.createFragmentName(oTab, this.oObject.UISettings.Tab1Fcat), this.oObject.UISettings.Tab1Fcat);
+				alert(oFragment);
+			}
+		} else if (oTab == "tab2") {
+			if (this.oObject.UISettings.Tab2) {
+				// 
+			}
+		} else if (oTab == "tab3") {
+			if (this.oObject.UISettings.Tab3) {
+				// 
+			}
 		} else {
-			this.getView().byId("addButton").setVisible(false);
+			if (this.oObject.UISettings.Tab4) {
+				// 
+			}
 		}
+
+		// if (oTab == "tab2") {
+		// 	this.getView().byId("addButton").setVisible(true);
+		// 	this.calculateValueFLECS();
+		// } else {
+		// 	this.getView().byId("addButton").setVisible(false);
+		// }
 	},
 
 	setSliderStep: function() {

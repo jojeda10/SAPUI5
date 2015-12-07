@@ -64,6 +64,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
 
   init: function() {
     sap.ui.localResources("util");
+    sap.ui.localResources("fragments");
     jQuery.sap.require("catalog.util.Formatter");
     jQuery.sap.require("catalog.util.Utilities");
     sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
