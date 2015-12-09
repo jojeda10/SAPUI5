@@ -2,11 +2,7 @@
 	xmlns:l="sap.ui.layout" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page class="sapUiSizeCompact" id="detailPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}">
 		<headerContent>
-			<!--<Toolbar id="detailToolba2r">-->
-			<!--	<content>-->
-			<Button icon="sap-icon://action" id="addButton2" press="onAddBenefit" text="Go to My benefits"></Button>
-			<!--	</content>-->
-			<!--</Toolbar>	-->
+			<Button id="heabut1" icon="{UISettings/Heabut1Icon}" press="{UISettings/Heabut1Hand}" text="{UISettings/Heabut1Label}"></Button>
 		</headerContent>
 		<content>
 			<ObjectHeader icon="{Fcat/Icon}" iconActive="false" id="detailHeader" introActive="false" number="{Fcat/UnitBud}"
@@ -23,48 +19,11 @@
 					<IconTabFilter design="Horizontal" icon="{UISettings/Tab1Icon}" id="iconTabFilter1" key="tab1" text="Information" textDirection="LTR"
 						visible="{UISettings/Tab1}">
 						<content>
-							<form:SimpleForm id="AppraisersForm" minWidth="1024px">
-								<HBox alignItems="Stretch" direction="Row" displayInline="false" fitContainer="false" height="100%" id="idhor" justifyContent="Start"
-									renderType="Div" visible="true" width="1024px" xmlns="sap.m">
-									<tooltip></tooltip>
-									<dependents></dependents>
-									<items>
-										<layout:VerticalLayout enabled="true" id="idverto" visible="true" width="100%" xmlns="sap.ui.layout">
-											<content>
-												<Text id="text1" text="{Fcat/Info}" xmlns="sap.m"/>
-											</content>
-										</layout:VerticalLayout>
-									</items>
-								</HBox>
-							</form:SimpleForm>
 						</content>
 					</IconTabFilter>
 					<IconTabFilter design="Horizontal" icon="{UISettings/Tab2Icon}" id="iconTabFilter2" key="tab2" text="Enrollment" textDirection="LTR"
 						visible="{UISettings/Tab2}">
 						<content>
-							<l:Grid defaultSpan="L6 M6 S10" hSpacing="2" idclass="sapUiSmallMarginTop">
-								<l:content>
-									<VBox width="100%">
-										<Input change="onInputChange" class="sapUiSmallMarginBottom" description="Units" fieldWidth="80%" id="idInput" value="{Fcat/UnitSel}"
-											width="100%"/>
-										<Slider change="onSliderChange" id="idSlider" max="{Fcat/UnitMax}" min="{Fcat/UnitMin}" value="{Fcat/UnitSel}" width="100%"/>
-									</VBox>
-									<layout:VerticalLayout class="valueBlock" enabled="true" id="idverto1" visible="true" width="100%" xmlns="sap.ui.layout">
-										<content>
-											<VBox class="sapMObjectNumber" id="stuff" width="100%" xmlns="sap.m">
-												<Text class="valueInput" id="options" text="{Fcat/UnitBud}" xmlns="sap.m"/>
-												<Text class="valueUnit" id="text3" text="Options" xmlns="sap.m"/>
-											</VBox>
-											<Text class="valueDesc" id="text4" text="10 Euro / Option" xmlns="sap.m"/>
-											<Text class="valueOutput" id="valorization" text="{Fcat/ValueCal}" xmlns="sap.m"/>
-											<Text class="valueUnit" id="text6" text="Euro" xmlns="sap.m"/>
-											<Text id="amtinv" text="{Fcat/UnitSel}" visible="false" xmlns="sap.m"/>
-											<Text id="valinv" text="{Fcat/ValuVal}" visible="false" xmlns="sap.m"/>
-											<Text id="cosinv" text="{Fcat/OptsCos}" visible="false" xmlns="sap.m"/>
-										</content>
-									</layout:VerticalLayout>
-								</l:content>
-							</l:Grid>
 						</content>
 					</IconTabFilter>
 					<IconTabFilter design="Horizontal" icon="{UISettings/Tab3Icon}" id="iconTabFilter3" key="tab1" text="Information" textDirection="LTR"
@@ -79,7 +38,7 @@
 			<Toolbar id="detailToolbar">
 				<content>
 					<ToolbarSpacer id="toolbarSpacer"></ToolbarSpacer>
-					<Button class="addToMyBen" icon="sap-icon://add-favorite" id="addButton" press="onAddBenefit" text="Add to My benefits" visible="false"></Button>
+					<Button id="lowbut1" class="addToMyBen" icon="{UISettings/Lowbut1Icon}" press="{UISettings/Lowbut1Hand}" text="{UISettings/Lowbut1Label}" visible="{UISettings/Lowbut1}"></Button>
 				</content>
 			</Toolbar>
 		</footer>

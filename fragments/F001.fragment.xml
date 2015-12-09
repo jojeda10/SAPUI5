@@ -1,23 +1,7 @@
-							<l:Grid idclass="sapUiSmallMarginTop" defaultSpan="L6 M6 S10" hSpacing="2">
-								<l:content>
-									<VBox width="100%">
-										<Input change="onInputChange" class="sapUiSmallMarginBottom" description="Units" fieldWidth="80%" id="idInput" value="{Fcat/UnitSel}"
-											width="100%"/>
-										<Slider change="onSliderChange" id="idSlider" max="{Fcat/UnitMax}" min="{Fcat/UnitMin}" value="{Fcat/UnitSel}" width="100%"/>
-									</VBox>
-									<layout:VerticalLayout class="valueBlock" enabled="true" id="idverto1" visible="true" width="100%" xmlns="sap.ui.layout">
-										<content>
-											<VBox class="sapMObjectNumber" id="stuff" width="100%" xmlns="sap.m">
-												<Text class="valueInput" id="options" text="{Fcat/UnitBud}" xmlns="sap.m"/>
-												<Text class="valueUnit" id="text3" text="Options" xmlns="sap.m"/>
-											</VBox>
-											<Text class="valueDesc" id="text4" text="10 Euro / Option" xmlns="sap.m"/>
-											<Text class="valueOutput" id="valorization" text="{Fcat/ValueCal}" xmlns="sap.m"/>
-											<Text class="valueUnit" id="text6" text="Euro" xmlns="sap.m"/>
-											<Text id="amtinv" text="{Fcat/UnitSel}" visible="false" xmlns="sap.m"/>
-											<Text id="valinv" text="{Fcat/ValuVal}" visible="false" xmlns="sap.m"/>
-											<Text id="cosinv" text="{Fcat/OptsCos}" visible="false" xmlns="sap.m"/>
-										</content>
-									</layout:VerticalLayout>
-								</l:content>
-							</l:Grid>
+<Grid defaultSpan="L6 M6 S10" hSpacing="2" idclass="sapUiSmallMarginTop" xmlns="sap.ui.layout">
+	<content>
+		<VBox width="100%" xmlns="sap.m">
+			<Text id="F001--text1" text="{Fcat/Info}" xmlns="sap.m"/>
+		</VBox>
+	</content>
+</Grid>

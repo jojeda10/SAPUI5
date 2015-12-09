@@ -16,10 +16,5 @@ catalog.util.Utilities = {
 		var rValue = parseInt(val) / 10;
 		rValue = Math.round(rValue);
 		return rValue;
-	},
-	
-	getAppidSes: function(app, ses) {
-		var sPath = "" + app + "" + ses + "";
-		return sPath;
 	}
 };

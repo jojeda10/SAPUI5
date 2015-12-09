@@ -34,6 +34,7 @@ oMock.start();
 
 		<script>
      		jQuery.sap.includeStyleSheet("Style/myCSS.css");
+     		sap.ui.localResources("fragments");
 			sap.ui.getCore().attachInit(function() {
 				new sap.m.Shell({
 					app: new sap.ui.core.ComponentContainer({

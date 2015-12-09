@@ -58,7 +58,8 @@
 					sap:updatable="false"/>
 			</ComplexType>
 			<ComplexType Name="UISettings">
-				<Property Name="Tab1" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Boolean value"
+				<Property MaxLength="2" Name="Selector" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Selector type" sap:sortable="false" sap:updatable="false"/><Property Name="Tab1" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Boolean value"
 					sap:sortable="false" sap:updatable="false"/><Property Name="Tab2" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Boolean value"
 					sap:sortable="false" sap:updatable="false"/><Property Name="Tab3" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Boolean value"
 					sap:sortable="false" sap:updatable="false"/><Property Name="Tab4" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Boolean value"

@@ -1,7 +1,6 @@
 jQuery.sap.declare("catalog.Component");
 jQuery.sap.require("catalog.MyRouter");
 
-
 sap.ui.core.UIComponent.extend("catalog.Component", {
   metadata: {
     name: "catalog",
@@ -67,6 +66,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
     sap.ui.localResources("fragments");
     jQuery.sap.require("catalog.util.Formatter");
     jQuery.sap.require("catalog.util.Utilities");
+    jQuery.sap.require("jquery.sap.resources");
     sap.ui.core.UIComponent.prototype.init.apply(this, arguments);
 
     var mConfig = this.getMetadata().getConfig();
@@ -74,6 +74,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
     // Always use absolute paths relative to our own component
     // (relative paths will fail if running in the Fiori Launchpad)
     var oRootPath = jQuery.sap.getModulePath("catalog");
+					jQuery.sap.registerModulePath('fragments', [oRootPath, "fragments" ].join("/"));
 
     // Set i18n model
     var i18nModel = new sap.ui.model.resource.ResourceModel({
