@@ -5,7 +5,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
   metadata: {
     name: "catalog",
     version: "1.0",
-    includes: [],
+    includes: ["Style/myCSS.css"],
     dependencies: {
       libs: ["sap.m", "sap.ui.layout"],
       components: []
@@ -64,6 +64,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
   init: function() {
     sap.ui.localResources("util");
     sap.ui.localResources("fragments");
+    sap.ui.localResources("image");
     jQuery.sap.require("catalog.util.Formatter");
     jQuery.sap.require("catalog.util.Utilities");
     jQuery.sap.require("jquery.sap.resources");
@@ -75,6 +76,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
     // (relative paths will fail if running in the Fiori Launchpad)
     var oRootPath = jQuery.sap.getModulePath("catalog");
 					jQuery.sap.registerModulePath('fragments', [oRootPath, "fragments" ].join("/"));
+					jQuery.sap.registerModulePath('image', [oRootPath, "image" ].join("/"));
 
     // Set i18n model
     var i18nModel = new sap.ui.model.resource.ResourceModel({

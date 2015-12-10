@@ -3,6 +3,9 @@ sap.ui.core.mvc.Controller.extend("catalog.view.Empty", {
 	onInit: function() {
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
 
+		//Load picture
+		var oRootPath = jQuery.sap.getModulePath("image");
+		this.getView().byId("idpicpart").setSrc(oRootPath + "/EmptyPic.PNG");
 		if (sap.ui.Device.system.phone) {
 			//Do not wait for the master when in mobile phone resolution
 			this.oInitialLoadFinishedDeferred.resolve();

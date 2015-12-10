@@ -1,0 +1,10 @@
+<Dialog xmlns="sap.ui.commons" xmlns:b="sap.suite.ui.commons"
+	xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:m="sap.m"
+	contentWidth="240px" id="Dialog" title="Ziel..." icon="sap-icon://initiative"
+	stretch="false" showHeader="true">
+	<content>
+
+		<Button id="ButtonCreate" text="Anlegen" press="doCreate" type="Default"
+			icon="sap-icon://initiative" />
+	</content>
+</Dialog>    
