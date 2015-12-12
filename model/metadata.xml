@@ -179,24 +179,24 @@
 				<EntitySet EntityType="ZHR_BENEFITS_SRV.Benefits" Name="Benefits" sap:addressable="false" sap:content-version="1" sap:pageable="false"/>
 				<EntitySet EntityType="ZHR_BENEFITS_SRV.LandingPage" Name="LandingPage" sap:addressable="false" sap:content-version="1" sap:pageable="false"/>
 				<FunctionImport Name="addBenefit" ReturnType="ZHR_BENEFITS_SRV.Messg" m:HttpMethod="GET" sap:action-for="ZHR_BENEFITS_SRV.Benefits">
-					<Parameter Mode="In" Name="BenId" Type="Edm.String"/>
 					<Parameter Mode="In" Name="Bplan" Type="Edm.String"/>
 					<Parameter Mode="In" Name="Barea" Type="Edm.String"/>
 					<Parameter Mode="In" Name="Pernr" Type="Edm.String"/>
+				    <Parameter Mode="In" Name="FrontendItem" Type="Edm.String"/>
 				</FunctionImport>
 				<FunctionImport Name="removeBenefit" ReturnType="ZHR_BENEFITS_SRV.Messg" m:HttpMethod="GET" sap:action-for="ZHR_BENEFITS_SRV.Benefits">
 					<Parameter Mode="In" Name="Actionid" Type="Edm.String"/>
 					<Parameter Mode="In" Name="Pernr" Type="Edm.String"/>
 					<Parameter Mode="In" Name="Bplan" Type="Edm.String"/>
-					<Parameter Mode="In" Name="BenId" Type="Edm.String"/>
 					<Parameter Mode="In" Name="Barea" Type="Edm.String"/>
+				    <Parameter Mode="In" Name="FrontendItem" Type="Edm.String"/>
 				</FunctionImport>
 				<FunctionImport Name="editBenefit" ReturnType="ZHR_BENEFITS_SRV.Messg" m:HttpMethod="GET" sap:action-for="ZHR_BENEFITS_SRV.Benefits">
 					<Parameter Mode="In" Name="Actionid" Type="Edm.String"/>
 					<Parameter Mode="In" Name="Pernr" Type="Edm.String"/>
 					<Parameter Mode="In" Name="Bplan" Type="Edm.String"/>
-					<Parameter Mode="In" Name="BenId" Type="Edm.String"/>
 					<Parameter Mode="In" Name="Barea" Type="Edm.String"/>
+					<Parameter Mode="In" Name="FrontendItem" Type="Edm.String"/>
 				</FunctionImport>
 			</EntityContainer>
 			<atom:link href="http://sdaw0796.resnp.sysnp.shared.fortis:8000/sap/opu/odata/sap/ZHR_BENEFITS_SRV/$metadata" rel="self"

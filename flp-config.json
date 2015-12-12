@@ -1,11 +1,10 @@
 {
     "application": {
         "id": "",
-        "title": "Pepito",
-        "description": "Pepito",
+        "title": "Catalog",
         "type": "SAP_UI5_Component",
         "componentUrl": "/",
-        "appUrl": "#Pepito-Display",
+        "appUrl": "#Catalog-Display",
         "navigationComponentName": "catalog",
         "intentSemanticObject": "",
         "intentAction": "",
@@ -23,10 +22,10 @@
     },
     "tile": {
         "type": "StaticTile",
-        "title": "Pepito",
-        "subtitle": "Pepito",
-        "searchKeywords": "Pepito,Pepito",
-        "displayIconUrl": "sap-icon://approvals",
+        "title": "Catalog",
+        "subtitle": "Subtitle",
+        "searchKeywords": "Catalog,Subtitle",
+        "displayIconUrl": "sap-icon://course-book",
         "displayInfoText": "",
         "size": "1x1",
         "serviceURL": "",

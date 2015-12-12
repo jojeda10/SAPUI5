@@ -13,11 +13,28 @@
 			data-sap-ui-xx-bindingSyntax="complex"
 			data-sap-ui-resourceroots='{"catalog": "./"}'>
 		</script>
+<script>
+var bRunWithMock = true;
+var sRunWithMock = jQuery.sap.getUriParameters().get('run-with-mock');
+if (sRunWithMock === 'false') {
+bRunWithMock = false;
+}
+if (bRunWithMock) {
+jQuery.sap.require('sap.ui.core.util.MockServer');
+var uri = '/sap/opu/odata/sap/ZHR_BENEFITS_SRV/';
+var oMock = new sap.ui.core.util.MockServer({rootUri : uri});
+oMock.simulate('model/metadata.xml', { sMockdataBaseUrl : 'model/', bGenerateMissingMockData : true });
+oMock.start();
+	jQuery(document).ready(function($) {  sap.m.MessageToast.show('Running in demo mode with mock data.', {  duration : 4000 });
+});
+}
+</script>
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<script>
      		jQuery.sap.includeStyleSheet("Style/myCSS.css");
+     		sap.ui.localResources("fragments");
 			sap.ui.getCore().attachInit(function() {
 				new sap.m.Shell({
 					app: new sap.ui.core.ComponentContainer({
@@ -27,7 +44,7 @@
 				}).placeAt("content");
 			});
 		</script>
-	<script src='https://webide-s0005549254trial.dispatcher.hanatrial.ondemand.com/plugins/pluginrepository/hybrid/cordovafacade/cordova.js' data-original-url='index.html'></script>
+	<script src='https://webide-s0005549254trial.dispatcher.hanatrial.ondemand.com/plugins/pluginrepository/hybrid/cordovafacade/cordova.js' data-original-url='mock_preview_sapui5.html'></script>
 <style>#interactive.viewport video{width:320px;height:240px;}
 #interactive.viewport .drawingBuffer{width:320px;height:240px;position:absolute;}</style></head>
 

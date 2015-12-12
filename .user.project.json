@@ -3,6 +3,34 @@
     {
       "filePath": "/catalog/index.html",
       "previewMode": 1,
+      "dataMode": 0,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [
+        {
+          "paramName": "",
+          "paramValue": "",
+          "paramActive": false
+        },
+        {
+          "paramName": "",
+          "paramValue": "",
+          "paramActive": false
+        }
+      ],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "id": 3338709,
+        "runnerId": "webapprunner",
+        "displayName": "Config for Launchpad"
+      }
+    },
+    {
+      "filePath": "/catalog/index.html",
+      "previewMode": 1,
       "dataMode": 1,
       "workspace": "withoutWorkspace",
       "ui5ActiveVersion": null,
@@ -26,23 +54,6 @@
         "id": 9525104,
         "runnerId": "webapprunner",
         "displayName": "New Web Application 10"
-      }
-    },
-    {
-      "filePath": "/catalog/Component.js",
-      "previewMode": 1,
-      "dataMode": 1,
-      "workspace": "withoutWorkspace",
-      "ui5ActiveVersion": null,
-      "ui5VerSource": null,
-      "isDefaultVersion": 0,
-      "urlParameters": [],
-      "hashParameter": "",
-      "backendSystem": [],
-      "_metadata": {
-        "id": 7840824,
-        "runnerId": "fiorirunner",
-        "displayName": "New SAP Fiori Component on Sandbox"
       }
     },
     {
@@ -71,6 +82,23 @@
         "id": 8961009,
         "runnerId": "webapprunner",
         "displayName": "New Web Application 9"
+      }
+    },
+    {
+      "filePath": "/catalog/Component.js",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "id": 7840824,
+        "runnerId": "fiorirunner",
+        "displayName": "New SAP Fiori Component on Sandbox"
       }
     }
   ]

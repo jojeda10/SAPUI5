@@ -77,6 +77,7 @@ sap.ui.core.UIComponent.extend("catalog.Component", {
     var oRootPath = jQuery.sap.getModulePath("catalog");
 					jQuery.sap.registerModulePath('fragments', [oRootPath, "fragments" ].join("/"));
 					jQuery.sap.registerModulePath('image', [oRootPath, "image" ].join("/"));
+					jQuery.sap.registerModulePath('view', [oRootPath, "view" ].join("/"));
 
     // Set i18n model
     var i18nModel = new sap.ui.model.resource.ResourceModel({
